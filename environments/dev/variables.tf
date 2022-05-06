@@ -7,7 +7,7 @@ variable "profile"  {
 }
 
 variable "lockfile"  {
-  default = "/home/fl_lpt-265/.aws/credentials"
+  default = "~/.aws/credentials"
 }
 
 variable "bucketname" {
