@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "/home/fl_lpt-265/terraform-modules-workspace/modules/vpc"
+  source = "~/modules/vpc"
   cidr = "${var.cidr}"
   cidrpublic = "${var.cidrpublic}"
   publicsubnetname =  "${var.publicsubnetname}"
@@ -7,12 +7,6 @@ module "vpc" {
   privatesubnetname =  "${var.privatesubnetname}"
   az1 = "${var.az1}"
   az2 = "${var.az2}"
-}
-
-module "security" {
-  source = "/home/fl_lpt-265/terraform-modules-workspace/modules/security"
-  sg = "${var.sg}"
-  vpc_id = "${module.vpc.cidr[0]}"
 }
 
 module "ec2" {
