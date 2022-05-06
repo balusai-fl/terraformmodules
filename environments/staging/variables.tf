@@ -7,7 +7,7 @@ variable "profile"  {
 }
 
 variable "lockfile"  {
-  default = "/home/fl_lpt-265/.aws/credentials"
+  default = "~/.aws/credentials"
 }
 
 variable "cidr" {
@@ -48,10 +48,6 @@ variable "instance_type" {
 
 variable "instance_count" {
   default = "1"
-}
-
-variable "sg" {
-  default = "web-staging-sg"
 }
 
 variable "volume" {
