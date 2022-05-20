@@ -1,12 +1,12 @@
-variable "region"  {
-  default = "us-east-2"
-}   
-
-variable "profile"  {
-  default = "awsprofile"
+variable "region" {
+  default = "us-east-1"
 }
 
-variable "lockfile"  {
+variable "profile" {
+  default = "default"
+}
+
+variable "lockfile" {
   default = "~/.aws/credentials"
 }
 
@@ -20,4 +20,8 @@ variable "acl" {
 
 variable "id" {
   default = "rule1"
+}
+
+variable "id2" {
+  default = "rule2"
 }

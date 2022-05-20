@@ -23,6 +23,19 @@ resource "aws_s3_bucket_versioning" "terraform-v12-project" {
   }
 }
 
+resource "aws_s3_bucket_intelligent_tiering_configuration" "itc1" {
+  bucket = "${var.bucketname}"
+  name = "itc1"
+  tiering {
+    access_tier = "DEEP_ARCHIVE_ACCESS"
+    days = 180
+  }
+  tiering {
+    access_tier = "ARCHIVE_ACCESS"
+    days = 120
+  }
+}
+
 resource "aws_s3_bucket_lifecycle_configuration" "terraform-v12-project" {
   bucket = "${var.bucketname}"
   rule {
@@ -38,6 +51,20 @@ resource "aws_s3_bucket_lifecycle_configuration" "terraform-v12-project" {
     transition {
       days          = 60
       storage_class = "GLACIER"
+    }
+  }
+  rule {
+    id = var.id2
+    expiration {
+      days = 180
+    }
+    status = "Enabled"
+    transition {
+      days          = 30
+      storage_class = "STANDARD_IA"
+    }
+      filter {
+      prefix = "*.jpeg"
     }
   }
 }
