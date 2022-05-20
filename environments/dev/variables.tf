@@ -1,12 +1,12 @@
-variable "region"  {
+variable "region" {
   default = "us-east-1"
-}   
+}
 
-variable "profile"  {
+variable "profile" {
   default = "default"
 }
 
-variable "lockfile"  {
+variable "lockfile" {
   default = "~/.aws/credentials"
 }
 
@@ -22,6 +22,6 @@ variable "id" {
   default = "rule1"
 }
 
-variable "id1" {
+variable "id2" {
   default = "rule2"
 }

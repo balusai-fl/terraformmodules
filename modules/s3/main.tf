@@ -54,10 +54,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "terraform-v12-project" {
     }
   }
   rule {
-    filter {
-      prefix = "*.jpeg"
-    }
-    id = "rule-2"
+    id = var.id2
     expiration {
       days = 180
     }
@@ -65,6 +62,9 @@ resource "aws_s3_bucket_lifecycle_configuration" "terraform-v12-project" {
     transition {
       days          = 30
       storage_class = "STANDARD_IA"
+    }
+      filter {
+      prefix = "*.jpeg"
     }
   }
 }
