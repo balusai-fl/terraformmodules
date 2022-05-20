@@ -3,7 +3,7 @@ variable "region"  {
 }   
 
 variable "profile"  {
-  default = "awsprofile"
+  default = "default"
 }
 
 variable "lockfile"  {

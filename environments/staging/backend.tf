@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "terraformbuckets3pract12"
+    bucket = "tf-balu-stg"
     key = "staging/terraform.tfstate"
-    region = "us-east-2"
+    region = "us-east-1"
   }
 }

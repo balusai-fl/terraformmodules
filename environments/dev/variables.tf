@@ -1,9 +1,9 @@
 variable "region"  {
-  default = "us-east-2"
+  default = "us-east-1"
 }   
 
 variable "profile"  {
-  default = "awsprofile"
+  default = "default"
 }
 
 variable "lockfile"  {
@@ -20,4 +20,8 @@ variable "acl" {
 
 variable "id" {
   default = "rule1"
+}
+
+variable "id1" {
+  default = "rule2"
 }
